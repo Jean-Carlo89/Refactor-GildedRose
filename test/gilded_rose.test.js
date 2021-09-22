@@ -46,15 +46,16 @@ describe("Gilded Rose", function() {
    //+------------ Aged Brie----------*//
 
    it("increase Aged brie quality", function() {
-    let sellIn = 0
-     const gildedRose = new Shop(new Item("Aged Brie", sellIn, 1));
+    let sellIn = 5
+    let quality = 2
+     const gildedRose = new Shop(new Item("Aged Brie", sellIn, quality));
   
       const items = gildedRose.update();
       console.log(items)
      
-      expect(items[items.length-1].name).toBe("foo2");
+      expect(items[items.length-1].name).toBe("Aged Brie");
       expect(items[items.length-1].sellIn).toBe(sellIn-1);
-      expect(items[items.length-1].quality).toBe(0);
+      expect(items[items.length-1].quality).toBe(quality+1);
       gildedRose.reset()
     });
 
