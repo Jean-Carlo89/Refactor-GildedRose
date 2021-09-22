@@ -10,7 +10,7 @@ export default class Shop{
        
     }
 
-    updateQuality(){
+    update(){
         this.items.forEach((item) =>{
             item.update()
             

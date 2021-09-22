@@ -7,7 +7,7 @@ describe("Gilded Rose", function() {
    
    const gildedRose = new Shop(new Item("foo", 10, 20));
 
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.update();
     console.log(items)
    
     expect(items[items.length-1].name).toBe("foo");
@@ -21,7 +21,7 @@ describe("Gilded Rose", function() {
     let sellIn = 0
      const gildedRose = new Shop(new Item("foo3", sellIn, 5));
   
-      const items = gildedRose.updateQuality();
+      const items = gildedRose.update();
       console.log(items)
      
       expect(items[items.length-1].name).toBe("foo3");
@@ -34,7 +34,7 @@ describe("Gilded Rose", function() {
    let sellIn = 0
     const gildedRose = new Shop(new Item("foo2", sellIn, 1));
  
-     const items = gildedRose.updateQuality();
+     const items = gildedRose.update();
      console.log(items)
     
      expect(items[items.length-1].name).toBe("foo2");
@@ -42,5 +42,20 @@ describe("Gilded Rose", function() {
      expect(items[items.length-1].quality).toBe(0);
      gildedRose.reset()
    });
+
+   //+------------ Aged Brie----------*//
+
+   it("increase Aged brie quality", function() {
+    let sellIn = 0
+     const gildedRose = new Shop(new Item("Aged Brie", sellIn, 1));
+  
+      const items = gildedRose.update();
+      console.log(items)
+     
+      expect(items[items.length-1].name).toBe("foo2");
+      expect(items[items.length-1].sellIn).toBe(sellIn-1);
+      expect(items[items.length-1].quality).toBe(0);
+      gildedRose.reset()
+    });
 
 });
