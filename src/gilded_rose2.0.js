@@ -1,6 +1,9 @@
 import AgedBrie from "./products/AgedBrie"
 import StandardItem from "./products/standardItem"
 import Sulfuras from "./products/Sulfuras"
+import BackstagePass from "./products/BackstagePass"
+import ConjuredItem from "./products/ConjuredItem"
+
 
 export default class Shop{
     items = []
@@ -15,6 +18,16 @@ export default class Shop{
             
             if(item.name==="Sulfuras, Hand of Ragnaros"){
                 item=new Sulfuras(item.name)
+                standard=!standard
+            }
+
+
+            if(item.name==="Backstage passes to a TAFKAL80ETC concert"){
+                item=new BackstagePass(item.name,item.sellIn,item.quality)
+                standard=!standard
+            }
+            if(item.name==="Conjured item"){
+                item=new ConjuredItem(item.name,item.sellIn,item.quality)
                 standard=!standard
             }
             if(standard){
