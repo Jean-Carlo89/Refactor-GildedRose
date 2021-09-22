@@ -59,4 +59,33 @@ describe("Gilded Rose", function() {
       gildedRose.reset()
     });
 
+    it("increase Aged brie quality by two when expired", function() {
+      let sellIn = 0
+      let quality = 2
+       const gildedRose = new Shop(new Item("Aged Brie", sellIn, quality));
+    
+        const items = gildedRose.update();
+        console.log(items)
+       
+        expect(items[items.length-1].name).toBe("Aged Brie");
+        expect(items[items.length-1].sellIn).toBe(sellIn-1);
+        expect(items[items.length-1].quality).toBe(quality+2);
+        gildedRose.reset()
+      });
+
+      it("should not allow Aged Brie quality over 50", function() {
+        let sellIn = Math.random()>=0.5 ? 0 : 2
+        console.log(sellIn)
+        let quality = 50
+         const gildedRose = new Shop(new Item("Aged Brie", sellIn, quality));
+      
+          const items = gildedRose.update();
+          console.log(items)
+         
+          expect(items[items.length-1].name).toBe("Aged Brie");
+          expect(items[items.length-1].sellIn).toBe(sellIn-1);
+          expect(items[items.length-1].quality).toBe(50);
+          gildedRose.reset()
+        });
+
 });
