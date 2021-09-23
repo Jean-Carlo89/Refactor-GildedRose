@@ -37,8 +37,8 @@ export default class BackstagePass extends Item{
 
     checkQualityOverload(){
         if (this.quality > 50){
-            this.quality=50;
             
-         } 
+            this.quality=50;
+        } 
     }
 }

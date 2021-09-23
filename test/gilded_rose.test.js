@@ -178,7 +178,6 @@ describe("Gilded Rose", function() {
             let sellIn = Math.floor(Math.random() * (15-3 + 1)) + 3;
             gildedRose.addNewProduct(new Item("Backstage passes to a TAFKAL80ETC concert", sellIn,49))
             
-            console.log(sellIn);
              const items = gildedRose.update();
              
             

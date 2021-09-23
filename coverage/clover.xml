@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1632434529801" clover="3.2.0">
-  <project timestamp="1632434529801" name="All files">
+<coverage generated="1632434753789" clover="3.2.0">
+  <project timestamp="1632434753789" name="All files">
     <metrics statements="64" coveredstatements="64" conditionals="32" coveredconditionals="31" methods="14" coveredmethods="14" elements="110" coveredelements="109" complexity="0" loc="64" ncloc="64" packages="2" files="7" classes="7"/>
     <package name="src">
       <metrics statements="21" coveredstatements="21" conditionals="10" coveredconditionals="10" methods="4" coveredmethods="4"/>
@@ -36,8 +36,8 @@
         <line num="5" count="3" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
         <line num="11" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="18" count="1" type="stmt"/>
       </file>
@@ -61,7 +61,7 @@
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="39" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
       </file>
       <file name="ConjuredItem.js" path="/home/jean/ISIC/Refactor-GlidedRose/src/products/ConjuredItem.js">
         <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
