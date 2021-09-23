@@ -83,14 +83,11 @@ describe("Gilded Rose", function() {
 
       it("should not allow Aged Brie quality over 50", function() {
         let sellIn = Math.random()>=0.5 ? 0 : 2
-        console.log(sellIn)
         let quality = 50
          const gildedRose = new Shop();
          gildedRose.addNewProduct(new Item("Aged Brie", sellIn, quality))
       
           const items = gildedRose.update();
-          
-         
           expect(items[items.length-1].name).toBe("Aged Brie");
           expect(items[items.length-1].sellIn).toBe(sellIn-1);
           expect(items[items.length-1].quality).toBe(50);
@@ -159,9 +156,41 @@ describe("Gilded Rose", function() {
             
            });
 
+           it("quality should drop to zero after concert", function() {
+         
+            const gildedRose = new Shop();
+            let quality = 12
+            gildedRose.addNewProduct(new Item("Backstage passes to a TAFKAL80ETC concert", 0,quality))
+         
+             const items = gildedRose.update();
+             
+            
+             expect(items[items.length-1].name).toBe("Backstage passes to a TAFKAL80ETC concert");
+             
+             expect(items[items.length-1].quality).toBe(0);
+            
+           });
+
+           it("quality should not surpass 50", function() {
+         
+            const gildedRose = new Shop();
+            let quality = 12
+            let sellIn = Math.floor(Math.random() * (15-3 + 1)) + 3;
+            gildedRose.addNewProduct(new Item("Backstage passes to a TAFKAL80ETC concert", sellIn,49))
+            
+            console.log(sellIn);
+             const items = gildedRose.update();
+             
+            
+             expect(items[items.length-1].name).toBe("Backstage passes to a TAFKAL80ETC concert");
+             
+             expect(items[items.length-1].quality).toBe(50);
+            
+           });
+
           /*---- Conjured Item----*/
 
-          it("should increase twp times faster than normal item", function() {
+          it("should increase two times faster than normal item", function() {
          
             const gildedRose = new Shop();
             let sellIn = 5
@@ -192,6 +221,24 @@ describe("Gilded Rose", function() {
              expect(items[items.length-1].quality).toBe(quality-4);
             
            });
+
+           it("should never return negative quality", function() {
+         
+            const gildedRose = new Shop();
+            
+            
+            gildedRose.addNewProduct(new Item("Conjured item", 0,0))
+         
+             const items = gildedRose.update();
+             
+            
+            
+             expect(items[items.length-1].sellIn).toBe(-1);
+             expect(items[items.length-1].quality).toBe(0);
+            
+           });
+
+           /* ----------- Other cases--------*/
 
            it("should be able to test different products", function() {
          
