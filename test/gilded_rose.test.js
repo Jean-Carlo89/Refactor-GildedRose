@@ -1,4 +1,4 @@
-//const {Shop, Item} = require("../src/gilded_rose");
+
 import Item from "../src/products/Item"
 import Shop from "../src/index"
 
