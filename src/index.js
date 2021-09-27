@@ -35,7 +35,7 @@ export default class Shop{
             }
                 
             this.items=[...this.items,item]
-          /
+          
     }
 
 
