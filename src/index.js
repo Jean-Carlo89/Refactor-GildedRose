@@ -35,7 +35,7 @@ export default class Shop{
             }
                 
             this.items=[...this.items,item]
-          // this.items=[...this.items,new StandardItem(item.name,item.sellIn,item.quality)]
+          /
     }
 
 
